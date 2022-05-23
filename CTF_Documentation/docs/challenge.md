@@ -272,7 +272,7 @@ What is the system called that constantly checks an ICS process to ensure it is 
 #### Hint
     None provided.
 #### Solution Detail
-*Will need solution detail*
+A simple Google search should suffice to find the answer to this question.
 
 ### ICS Network Security
 #### Question
@@ -282,7 +282,7 @@ What is the area called that separates the IT and OT networks?
 #### Hint
     None provided.
 #### Solution Detail
-*Will need solution detail*
+A simple Google search should suffice to find the answer to this question.
 
 ### ICS MITRE ATT&CK
 #### Question
@@ -317,84 +317,118 @@ The answer to this question can be obtained by googling keywords within the ques
 ## Ladder Logic
 ### Basic Ladder Logic
 #### Question
-.
+With this ladder logic diagram will the Motor stay ON if the “Test Button” is depressed and released?
 #### Answer
-    .
+    No
 #### Hint
-    .
+    Think of the flow of electricity.
 #### Solution Detail
-.
+Since the test button bypasses both the start and stop logic the flow of electricity to the motor will only be completed while the test button is depressed.
 
 ### Intermediate Ladder Logic
 #### Question
-.
+With this ladder logic diagram what actions will occur if the “On/Off Switch” is depressed?
+
+Answer Format = Warning Light: ON or OFF Motor 1: ON or OFF Motor 2: ON or OFF (Must enter semi-colons in your answer.)
 #### Answer
-    .
+    Warning Light: ON Motor 1: ON Motor 2: ON
 #### Hint
-    .
+    Think about what the relay is doing.
 #### Solution Detail
-.
+Once the On/Off switch is depressed electricity will flow through the top rung and will activate the relay which is linked to the relay in the second rung. Once this relay is activated then the electricty will have access to the warning light, and both motors resulting in all of them to be "ON".
 
 ### Advanced Ladder Logic
 #### Question
-.
+With this ladder logic diagram what will the “Light” do after the “Start Button” is depressed?
 #### Answer
-    .
+    Blink
 #### Hint
-    .
+    Think about what happens to the electricity as it flows through the different rungs and how this affects the relays.
 #### Solution Detail
-.
+This ladder logic diagram takes advantage of only a single rung but has multiple nested rungs that can be confusing if you don't understand how the electricity will flow through them. For this diagram the reason why the light blinks instead of just turning and staying on is because of how the relays work. When the start button is depressed the flow of electricity will only be able to flow through the second nested rung based on the logic and this will activate the relay which is linked to the relay in the second set of nested logic. Once the electricity reaches the second nested rung it has a path to flow to the light but as it passes through the rung it will also activate the relay again. This causes the flow of electricity to pulse the light on and off. 
 
 ### Identify Ladder Logic Symbols #1
 #### Question
-.
+Identify what ladder logic symbol is in the attached file.
 #### Answer
-    .
+    Normally Open
 #### Hint
-    .
+    Not provided.
 #### Solution Detail
-.
+A Google search of ladder logic symbols will provide the answer to this.
 
 ### Identify Ladder Logic Symbols #2
 #### Question
-.
+Identify what ladder logic symbol is in the attached file.
 #### Answer
-    .
+    Normally Closed
 #### Hint
-    .
+    Not provided.
 #### Solution Detail
-.
+A Google search of ladder logic symbols will provide the answer to this.
 
 ### Identify Ladder Logic Symbols #3
 #### Question
-.
+Identify what ladder logic symbol is in the attached file.
 #### Answer
-    .
+    Coil
 #### Hint
-    .
+    Not provided.
 #### Solution Detail
-.
+A Google search of ladder logic symbols will provide the answer to this.
 
 ## Modbus Network Analysis
-### Malicious Modbus Command
+### Malicious Modbus Command #1
 #### Question
-.
+What is the MAC address of the IP address 192.168.90.100?
 #### Answer
-    .
+    08:00:27:5d:7b:c3
 #### Hint
-    .
+    Not provided.
 #### Solution Detail
-.
+You simply need to find a packet within the PCAP that is associated with the IP 192.168.90.100 and dig into the packet data within the "data-link" breakdown to find this answer.
+
+### Malicious Modbus Command #2
+#### Question
+What is the name of the ScadaBR file being requested in the web traffic?
+#### Answer
+    MiscDwr.doLongPoll.dwr
+#### Hint
+    Not provided.
+#### Solution Detail
+You will have to dig through the PCAP file until you find HTTP traffic that is associated ScadaBR and packet information will contain the file name for this answer. Packet #18405 is an example.
 
 ### Pressure Tank goes BOOM! #1
 #### Question
-.
+How many different Modbus function codes are there in this PCAP?
+
+Answer = #
 #### Answer
-    .
+    3
 #### Hint
-    .
+    Not provided.
 #### Solution Detail
-.
+Sorting the packets by Modbus you will be able to find there are 3 distinct function codes in the PCAP.
+
+### Pressure Tank goes BOOM! #2
+#### Question
+What type of webserver is being used during this attack?
+#### Answer
+    Apache-Coyote
+#### Hint
+    Not provided.
+#### Solution Detail
+By sorting the packets by protocol and looking at the HTTP traffic you can pull this answer from the packet data breakdown.
+
+### Pressure Tank goes BOOM! #3
+#### Question
+What is the checksum of the last POST command to ScadaBR?
+#### Answer
+    0x6289
+#### Hint
+    Not provided.
+#### Solution Detail
+By sorting the packets and looking at the HTTP traffic you can scroll down to the last POST request and dig into the packet data to find the checksum value.
 
 ### Modbus Attack Identification Challenge #1
 #### Question
