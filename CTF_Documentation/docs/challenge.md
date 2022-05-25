@@ -315,7 +315,7 @@ Which malware was the first of its kind to target safety instrumented systems wi
 The answer to this question can be obtained by googling keywords within the question.
 
 ## Ladder Logic
-### Basic Ladder Logic
+### Basic Ladder Logic (Uses Ladder_Logic_Easy.PNG)
 #### Question
 With this ladder logic diagram will the Motor stay ON if the “Test Button” is depressed and released?
 #### Answer
@@ -325,7 +325,7 @@ With this ladder logic diagram will the Motor stay ON if the “Test Button” i
 #### Solution Detail
 Since the test button bypasses both the start and stop logic the flow of electricity to the motor will only be completed while the test button is depressed.
 
-### Intermediate Ladder Logic
+### Intermediate Ladder Logic (Uses Ladder_Logic_Medium.PNG)
 #### Question
 With this ladder logic diagram what actions will occur if the “On/Off Switch” is depressed?
 
@@ -337,7 +337,7 @@ Answer Format = Warning Light: ON or OFF Motor 1: ON or OFF Motor 2: ON or OFF (
 #### Solution Detail
 Once the On/Off switch is depressed electricity will flow through the top rung and will activate the relay which is linked to the relay in the second rung. Once this relay is activated then the electricty will have access to the warning light, and both motors resulting in all of them to be "ON".
 
-### Advanced Ladder Logic
+### Advanced Ladder Logic (Uses Ladder_Logic_Hard.PNG)
 #### Question
 With this ladder logic diagram what will the “Light” do after the “Start Button” is depressed?
 #### Answer
@@ -347,7 +347,7 @@ With this ladder logic diagram what will the “Light” do after the “Start B
 #### Solution Detail
 This ladder logic diagram takes advantage of only a single rung but has multiple nested rungs that can be confusing if you don't understand how the electricity will flow through them. For this diagram the reason why the light blinks instead of just turning and staying on is because of how the relays work. When the start button is depressed the flow of electricity will only be able to flow through the second nested rung based on the logic and this will activate the relay which is linked to the relay in the second set of nested logic. Once the electricity reaches the second nested rung it has a path to flow to the light but as it passes through the rung it will also activate the relay again. This causes the flow of electricity to pulse the light on and off. 
 
-### Identify Ladder Logic Symbols #1
+### Identify Ladder Logic Symbols #1 (Uses Ladder_Logic_Symbol_1.PNG)
 #### Question
 Identify what ladder logic symbol is in the attached file.
 #### Answer
@@ -357,7 +357,7 @@ Identify what ladder logic symbol is in the attached file.
 #### Solution Detail
 A Google search of ladder logic symbols will provide the answer to this.
 
-### Identify Ladder Logic Symbols #2
+### Identify Ladder Logic Symbols #2 (Uses Ladder_Logic_Symbol_2.PNG)
 #### Question
 Identify what ladder logic symbol is in the attached file.
 #### Answer
@@ -367,7 +367,7 @@ Identify what ladder logic symbol is in the attached file.
 #### Solution Detail
 A Google search of ladder logic symbols will provide the answer to this.
 
-### Identify Ladder Logic Symbols #3
+### Identify Ladder Logic Symbols #3 (Uses Ladder_Logic_Symbol_3.PNG)
 #### Question
 Identify what ladder logic symbol is in the attached file.
 #### Answer
@@ -408,7 +408,7 @@ What is the packet number in the PCAP file that sent the malicious write command
 #### Solution Detail
 If you sort by the Modbus protocol you will see specific packets that show write commands that indicate when the attack occured.
 
-### Pressure Tank goes BOOM! #1
+### Pressure Tank goes BOOM! #1 (Uses fortiphyd_bitflip.pcapng)
 #### Question
 How many different Modbus function codes are there in this PCAP?
 
@@ -420,7 +420,7 @@ Answer = #
 #### Solution Detail
 Sorting the packets by Modbus you will be able to find there are 3 distinct function codes in the PCAP.
 
-### Pressure Tank goes BOOM! #2
+### Pressure Tank goes BOOM! #2 (Uses fortiphyd_attack.pcapng)
 #### Question
 What type of webserver is being used during this attack?
 #### Answer
@@ -430,7 +430,7 @@ What type of webserver is being used during this attack?
 #### Solution Detail
 By sorting the packets by protocol and looking at the HTTP traffic you can pull this answer from the packet data breakdown.
 
-### Pressure Tank goes BOOM! #3
+### Pressure Tank goes BOOM! #3 (Uses fortiphyd_attack.pcapng)
 #### Question
 What is the checksum of the last POST command to ScadaBR?
 #### Answer
@@ -450,7 +450,7 @@ Analyze the provided Modbus traffic PCAP to identify what type of attack is occu
 #### Solution Detail
 This challenge will prove to be difficult to complete by using Wireshark. I used NetworkMiner to analyze the PCAP file which lays out the series of events that occured and makes it clear there was a Man-in-the-Middle attack.
 
-### Modbus Attack Identification Challenge #2
+### Modbus Attack Identification Challenge #2 (Uses
 #### Question
 Analyze the provided Modbus traffic PCAP to identify what type of attack is occurring.
 #### Answer
@@ -509,4 +509,3 @@ What part of an Ethernet frame allows detection of corrupted data within the ent
     None provided.
 #### Solution Detail
 FCS information can be gleaned by googling key terms within the question. This leads users to the Ethernet frame Wikipedia page, which contains the answer.
-This is a test to check commits
