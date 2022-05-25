@@ -378,7 +378,7 @@ Identify what ladder logic symbol is in the attached file.
 A Google search of ladder logic symbols will provide the answer to this.
 
 ## Modbus Network Analysis
-### Malicious Modbus Command #1
+### Malicious Modbus Command #1 (Uses fortiphyd_attack.pcapng)
 #### Question
 What is the MAC address of the IP address 192.168.90.100?
 #### Answer
@@ -388,7 +388,7 @@ What is the MAC address of the IP address 192.168.90.100?
 #### Solution Detail
 You simply need to find a packet within the PCAP that is associated with the IP 192.168.90.100 and dig into the packet data within the "data-link" breakdown to find this answer.
 
-### Malicious Modbus Command #2
+### Malicious Modbus Command #2 (Uses fortiphyd_attack.pcapng)
 #### Question
 What is the name of the ScadaBR file being requested in the web traffic?
 #### Answer
@@ -397,6 +397,16 @@ What is the name of the ScadaBR file being requested in the web traffic?
     Not provided.
 #### Solution Detail
 You will have to dig through the PCAP file until you find HTTP traffic that is associated ScadaBR and packet information will contain the file name for this answer. Packet #18405 is an example.
+
+### Malicious Modbus Command #3 (Uses fortiphyd_bitflip.pcapng)
+#### Question
+What is the packet number in the PCAP file that sent the malicious write command?
+#### Answer
+    15050
+#### Hint
+    Pay attention to the ICS protocol.
+#### Solution Detail
+If you sort by the Modbus protocol you will see specific packets that show write commands that indicate when the attack occured.
 
 ### Pressure Tank goes BOOM! #1
 #### Question
@@ -430,25 +440,25 @@ What is the checksum of the last POST command to ScadaBR?
 #### Solution Detail
 By sorting the packets and looking at the HTTP traffic you can scroll down to the last POST request and dig into the packet data to find the checksum value.
 
-### Modbus Attack Identification Challenge #1
+### Modbus Attack Identification Challenge #1 (Uses Modbus_PCAP_Challenge_1.pcap
 #### Question
-.
+Analyze the provided Modbus traffic PCAP to identify what type of attack is occurring.
 #### Answer
-    .
+    Man In The Middle
 #### Hint
-    .
+    Wireshark might not be the best PCAP analyzer for this
 #### Solution Detail
-.
+This challenge will prove to be difficult to complete by using Wireshark. I used NetworkMiner to analyze the PCAP file which lays out the series of events that occured and makes it clear there was a Man-in-the-Middle attack.
 
 ### Modbus Attack Identification Challenge #2
 #### Question
-.
+Analyze the provided Modbus traffic PCAP to identify what type of attack is occurring.
 #### Answer
-    .
+    Query Flooding
 #### Hint
-    .
+    Wireshark might not be the best PCAP analyzer for this.
 #### Solution Detail
-.
+Again, this challenge will be difficult to complete by using Wireshark. I used NetworkMiner to analyze the PCAP and it if you look under the "Sessions" tab and sort by event you will see there is a large amount of query requests over a short amount of time. Indicating a query flood attack.
 
 ## Networking
 ### Basic Networking Knowledge
